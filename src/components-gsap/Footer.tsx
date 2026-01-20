@@ -4,10 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FaFacebookF, FaGithub, FaPhone, FaSpotify, FaTiktok, FaWhatsapp } from "react-icons/fa6";
-import { IoIosMail } from "react-icons/io";
-import { FaYoutube } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa6";
+import {FaGithub, FaPhone} from "react-icons/fa6";
 import StarBorderButton from '../components/StarBorderSustitute';
 import StarBorder from '../components/StarBorder';
 import { MdEmail } from 'react-icons/md';
@@ -215,7 +212,7 @@ const Footer: React.FC = () => {
           <h4 ref={titleRef} className='text-center text-black dark:text-white font-semibold text-3xl min-[480px]:text-4xl sm:text-5xl md:text-6xl xl:text-7xl cursor-default select-none min-w-[280px]'>
             Big ideas<br />Big solutions
           </h4>
-          
+
           {/* Description */}
           <span className="text-black dark:text-white relative z-30 font-copyright text-xs xs:text-sm sm:text-base md:text-lg cursor-default text-center max-w-[90%] sm:max-w-[85%]">
             Bring your ideas to the real world.

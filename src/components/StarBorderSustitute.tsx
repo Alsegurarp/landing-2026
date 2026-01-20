@@ -7,6 +7,7 @@ interface StarBorderButtonProps {
   width?: string;
   height?: string;
   textSize?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const glowVariants = {

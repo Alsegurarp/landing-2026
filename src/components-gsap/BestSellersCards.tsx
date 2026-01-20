@@ -4,14 +4,24 @@ import { SplitText } from 'gsap/SplitText';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
 import { bestSellersCards } from '../lib/BestSellersData';
-import StarBorder from '../components/StarBorder';
 
 gsap.registerPlugin(SplitText);
 
 interface BestSellersCardsProps {
-    cards?: any[];
+    cards?: CardData[];
     title?: string;
     subtitle?: string;
+}
+
+interface CardData {
+    title: string;
+    subtitulo?: string;
+    category?: string;
+    description: string;
+    src?: string | { src: string };
+    image?: string;
+    link?: string;
+    slug?: string | undefined;
 }
 
 const BestSellersCards = ({ cards: customCards, title = 'Best sellers', subtitle = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' }: BestSellersCardsProps) => {
@@ -104,8 +114,8 @@ const BestSellersCards = ({ cards: customCards, title = 'Best sellers', subtitle
     return (
         <>
             <section className="flex flex-col panel h-dvh relative snap-start w-full top-0 lg:overflow-hidden">
-                <div className="h-40 sm:h-40 md:h-48 lg:h-[280px] flex flex-col justify-center text-center sticky top-0 left-0 items-center z-20 pt-36 sm:pt-32 md:pt-40">
-                    <h4 ref={textRef} className='text-center text-black dark:text-white font-semibold text-3xl min-[480px]:text-4xl sm:text-5xl md:text-6xl xl:text-7xl cursor-default select-none min-w-[280px]'>{title}</h4>
+                <div className="h-40 sm:h-40 md:h-48 lg:h-70 flex flex-col justify-center text-center sticky top-0 left-0 items-center z-20 pt-36 sm:pt-32 md:pt-40">
+                    <h4 ref={textRef} className='text-center text-black dark:text-white font-semibold text-3xl min-[480px]:text-4xl sm:text-5xl md:text-6xl xl:text-7xl cursor-default select-none min-w-70'>{title}</h4>
                     <span className="text-black dark:text-white font-copyright text-sm sm:text-lg md:text-xl cursor-default">
                         {subtitle}
                     </span>
@@ -141,12 +151,13 @@ const BestSellersCards = ({ cards: customCards, title = 'Best sellers', subtitle
                     {
                         cardsToUse.map((card, index) => {
                             // Handle both bestSellersCards format and itinerary cards format
+                            const extendedCard = card as CardData & { category?: string; slug?: string };
                             const cardData = {
                                 title: card.title,
-                                subtitulo: card.subtitulo || card.category || '',
+                                subtitulo: card.subtitulo || extendedCard.category || '',
                                 description: card.description,
-                                src: card.src || card.image,
-                                link: card.link || (card.slug ? `/itinerarios/${card.slug}` : '#'),
+                                src: card.src || '',
+                                link: card.link || (extendedCard.slug ? `/itinerarios/${extendedCard.slug}` : '#'),
                             };
                             return <div key={index} className="w-56 xs:w-64 sm:w-72 md:w-80 lg:w-84 shrink-0"><Card index={index} {...cardData} /></div>
                         })
@@ -164,17 +175,17 @@ interface CardProps {
     title: string;
     subtitulo: string;
     description: string;
-    src: string ;
+    src: string | { src: string };
     link: string;
     index: number;
 }
 // title, subtitulo, description, src, link, color
 
 function Card({ title, subtitulo, description, src, link }: CardProps) {
-    const imageSrc = typeof src === 'string' ? src : src.src;
+    const imageSrc = typeof src === 'string' ? src : (src as CardData & { src: string })?.src || '';
 
     return (
-        <div className={`flex flex-col relative shrink-0 aspect-[260/420] md:aspect-[260/360] w-full rounded-2xl origin-top shadow-[4px_4px_4px_2px_rgba(0,0,0,0.1)] cursor-default select-none z-20 h-full`}>
+        <div className={`flex flex-col relative shrink-0 aspect-260/420 md:aspect-260/360 w-full rounded-2xl origin-top shadow-[4px_4px_4px_2px_rgba(0,0,0,0.1)] cursor-default select-none z-20 h-full`}>
             {/* Image Section - 60% of card height */}
             <div className="flex flex-[0.6] items-start justify-center rounded-t-2xl shrink-0 overflow-hidden relative">
                 <div className="w-full h-full rounded-t-2xl bg-gray-200 flex items-center justify-center text-gray-500 relative">
@@ -204,9 +215,12 @@ function Card({ title, subtitulo, description, src, link }: CardProps) {
                         </span>
                     </p>
                     <div className="">
-                        <StarBorder width='w-full' height='h-6' textSize='text-sm' link={link} >
+                        <button 
+                            onClick={() => window.location.href = link}
+                            className="relative w-full h-6 bg-black hover:bg-black/90 hover:scale-95 dark:bg-white dark:hover:bg-white/90 py-4 px-1 rounded-full text-white dark:text-black text-sm font-medium transition-all duration-300 flex items-center justify-center whitespace-nowrap"
+                        >
                             Contact me
-                        </StarBorder>
+                        </button>
                     </div>
                 </div>
             </div>

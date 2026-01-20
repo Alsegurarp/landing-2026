@@ -1,9 +1,7 @@
 'use client';
 
-import React from 'react';
 import image1 from '../assets/Portadas/HeroImage.webp';
 import imageResponsive from '../assets/Portadas/HeroImageCel.webp';
-import imageResponsiveTablet from '../assets/Portadas/HeroImageTablet.webp';
 
 import StarBorder from '../components/StarBorder';
 import StarBorderButton from '../components/StarBorderSustitute';

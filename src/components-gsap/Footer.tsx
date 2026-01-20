@@ -209,7 +209,7 @@ const Footer: React.FC = () => {
       <footer className="h-dvh grid grid-cols-1 grid-rows-[auto_auto] relative snap-start snap-stop-always panel">
         {/* Header Section */}
         <div className='flex flex-col justify-end items-center z-20 pt-20 sm:pt-16 md:pt-20 pb-2 sm:pb-3'>
-          <h4 ref={titleRef} className='text-center text-black dark:text-white font-semibold text-3xl min-[480px]:text-4xl sm:text-5xl md:text-6xl xl:text-7xl cursor-default select-none min-w-[280px]'>
+          <h4 ref={titleRef} className='text-center text-black dark:text-white font-semibold text-3xl min-[480px]:text-4xl sm:text-5xl md:text-6xl xl:text-7xl cursor-default select-none min-w-70'>
             Big ideas<br />Big solutions
           </h4>
 
@@ -221,18 +221,13 @@ const Footer: React.FC = () => {
           {/* Buttons */}
           <div className="flex flex-row gap-2 xs:gap-3 sm:gap-4 justify-center items-center z-30 w-full">
             <StarBorderButton textSize='text-xs xs:text-xs sm:text-xs' width='w-24 xs:w-28 sm:w-32 md:w-36 lg:w-40' height='h-9 xs:h-10 sm:h-11'>
+              Contact me
             </StarBorderButton>
             <StarBorder textSize='text-xs xs:text-xs sm:text-xs' width='w-24 xs:w-28 sm:w-32 md:w-36 lg:w-40' height='h-9 xs:h-10 sm:h-11'>
               Discover more
             </StarBorder>
         </div>
 
-        {/* Main Content - Centered Stack */}
-        <div className="w-full grid grid-cols-1 place-content-center place-items-center gap-2 sm:gap-4 overflow-hidden px-4 py-1 sm:py-2">
-
-          
-
-          </div>
 
           {/* Animated Brand Logo */}
           <section className="flex flex-col items-center w-full overflow-visible z-30 text-center pb-1 xs:pb-2 pt-2 xs:pt-4">
@@ -242,7 +237,7 @@ const Footer: React.FC = () => {
               id="JAPON-text"
             >
               {[..."Alsegurarp"].map((char, i) => (
-                <span key={i} className="text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg font-nohemi font-semibold text-primary-800 inline-block opacity-0 translate-y-[-30px] JAPON-letter tracking-widest">
+                <span key={i} className="text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg font-nohemi font-semibold text-primary-800 inline-block opacity-0 -translate-y-7.5 JAPON-letter tracking-widest">
                   {char}
                 </span>
               ))}
@@ -254,7 +249,7 @@ const Footer: React.FC = () => {
               id="animated-text"
             >
               {[..."Developer"].map((char, i) => (
-                <span key={i} className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-nohemi inline-block cursor-pointer text-white font-bold letter shrink-0" style={{ WebkitTextStroke: '1px #b4e1ed', paintOrder: 'stroke' }}>
+                <span key={i} className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-nohemi inline-block cursor-pointer text-white font-bold letter shrink-0" style={{ WebkitTextStroke: '2px #b4e1ed', paintOrder: 'stroke' }}>
                   {char}
                 </span>
               ))}
@@ -263,17 +258,17 @@ const Footer: React.FC = () => {
 
           {/* Social Icons */}
           <div className="flex justify-center gap-3 sm:gap-4 md:gap-6 z-30">
-            <FaGithub className='hover:text-primary-800 md:text-2xl' onClick={() => {
+            <FaGithub className='hover:text-primary-800 text-xl md:text-2xl' onClick={() => {
                 window.open('https://github.com/Alsegurarp', '_blank');
             }} />
-            <MdEmail className='hover:text-primary-800 md:text-2xl' onClick={() => {
+            <MdEmail className='hover:text-primary-800 text-xl md:text-2xl' onClick={() => {
                 const email = 'contact@alsegurarp.com';
                 const subject = 'Web developer\'s services';
                 const body = 'Hello Alex,\n\n I am interested in getting your services as a web developer.\n\n Please, reach out to me when you read this message.';
                 const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 window.open(gmailUrl, '_blank');
             }} />
-            <FaPhone className='hover:text-primary-800 md:text-2xl' onClick={() => {
+            <FaPhone className='hover:text-primary-800 text-xl md:text-2xl' onClick={() => {
                 window.open('tel:+525633001126', '_blank');
             }} />
           </div>
@@ -281,8 +276,8 @@ const Footer: React.FC = () => {
           <section className="flex flex-col items-center">
             
             {/* Footer Bottom */}
-            <div className="w-[80%] h-px bg-black dark:bg-white opacity-20 my-1"></div>
-            <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-2 text-center md:max-w-[80%] lg:max-w-full">
+            <div className="w-[80%] h-px bg-black dark:bg-white opacity-20 my-4" />
+            <div className="w-full px-4 flex flex-col lg:flex-row justify-between items-center gap-2 text-center md:max-w-[80%] lg:max-w-full">
               <span className="text-xs font-normal underline cursor-pointer hover:text-primary-800 text-black dark:text-white">For your knowledge</span>
               <span className="text-[10px] sm:text-xs text-black dark:text-white max-w-xl">
                 © 2026 The use of any information in this website is strictly for contact the developer or to visit his projects, it shouldn't be used for a different reason than that.  

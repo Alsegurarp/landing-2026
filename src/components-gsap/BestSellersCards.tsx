@@ -113,10 +113,10 @@ const BestSellersCards = ({ cards: customCards, title = 'Best sellers', subtitle
 
     return (
         <>
-            <section className="flex flex-col panel h-dvh relative snap-start w-full top-0 lg:overflow-hidden">
-                <div className="h-40 sm:h-40 md:h-48 lg:h-70 flex flex-col justify-center text-center sticky top-0 left-0 items-center z-20 pt-36 sm:pt-32 md:pt-40">
-                    <h4 ref={textRef} className='text-center text-black dark:text-white font-semibold text-3xl min-[480px]:text-4xl sm:text-5xl md:text-6xl xl:text-7xl cursor-default select-none min-w-70'>{title}</h4>
-                    <span className="text-black dark:text-white font-copyright text-sm sm:text-lg md:text-xl cursor-default">
+            <section className="flex flex-col panel h-dvh relative snap-start w-full top-0 overflow-hidden">
+                <div className="h-24 sm:h-28 md:h-32 flex flex-col justify-center text-center items-center z-20 pt-6 sm:pt-8 md:pt-10 px-4 flex-shrink-0 mt-12">
+                    <h4 ref={textRef} className='text-center text-black dark:text-white font-semibold text-2xl min-[480px]:text-3xl sm:text-4xl md:text-5xl xl:text-6xl cursor-default select-none min-w-70'>{title}</h4>
+                    <span className="text-black dark:text-white font-google text-xs sm:text-sm md:text-base cursor-default mt-0.5 sm:mt-1 font-bold">
                         {subtitle}
                     </span>
                 </div>

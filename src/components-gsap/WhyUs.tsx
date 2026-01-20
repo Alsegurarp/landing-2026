@@ -76,19 +76,24 @@ export default function WhyUs() {
             observer.disconnect();
         };
     }, []);
+
     return (
-        <section className='flex flex-col panel h-[100dvh] relative snap-start w-full rounded-lg top-0 lg:overflow-visible'>
-            <div className='h-40 sm:h-40 md:h-48 lg:h-[280px] flex flex-col justify-center text-center sticky top-0 left-0 items-center z-20 pt-36 sm:pt-32 md:pt-40'>
-                <h4 ref={titleRef} className='text-center text-black dark:text-white font-semibold text-3xl min-[480px]:text-4xl sm:text-5xl md:text-6xl xl:text-7xl cursor-default select-none min-w-[280px]'>Why to hire me?</h4>
-                <span className="text-black dark:text-white font-google text-sm sm:text-lg md:text-xl cursor-default">
+        <section className='flex flex-col panel h-dvh relative snap-start w-full top-0 lg:overflow-hidden'>
+            {/* Header Section */}
+            <div className='flex flex-col justify-center items-center z-20 pt-20 sm:pt-24 md:pt-28 pb-6 sm:pb-8 md:pb-10 px-4'>
+                <h4 ref={titleRef} className='text-center text-black dark:text-white font-semibold text-3xl min-[480px]:text-4xl sm:text-5xl md:text-6xl xl:text-7xl cursor-default select-none min-w-70'>
+                    Why to hire me?
+                </h4>
+                <span className="text-black dark:text-white font-google text-sm sm:text-lg md:text-xl cursor-default mt-2 sm:mt-3">
                     More reasons to work with me
                 </span>
             </div>
-            <div className='flex-1 flex flex-col justify-center items-center w-full pl-4 md:pl-12 lg:pl-18 2xl:pl-24 pr-4 md:pr-12 lg:pr-18 2xl:pr-24 gap-0.5 sm:gap-2 md:gap-6 mb-[15%] md:mb-[5%]'>
+
+            {/* Cards Section */}
+            <div className='flex-1 flex flex-col justify-center items-center w-full px-4 sm:px-6 md:px-12 lg:px-18 2xl:px-24 gap-2 sm:gap-3 md:gap-2 overflow-y-auto pb-4'>
                 <CardsMovibles2 cards={cardData} instanceId="set1" />
                 <CardsMovibles2 cards={cardData2} instanceId="set2" />
             </div>
-            <div className="h-[10%] md:hidden" />
         </section>
     );
 }

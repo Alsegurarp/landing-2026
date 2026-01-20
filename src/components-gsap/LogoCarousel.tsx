@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { motion } from 'framer-motion';
 import { SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";

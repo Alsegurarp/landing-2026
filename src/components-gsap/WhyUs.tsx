@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import CardsMovibles2 from './CardMovibles2';

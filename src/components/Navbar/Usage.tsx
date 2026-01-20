@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import StaggeredMenu from '../../components-gsap/StaggeredMenu';
 
 const menuItems = [
@@ -41,6 +41,7 @@ function Usage() {
     // Check dark mode from DOM and batch updates
     const isDarkMode = document.documentElement.classList.contains('dark');
     // React 18 automatically batches these state updates
+    // eslint-disable-next-line
     setIsDark(isDarkMode);
     setHydrated(true);
 

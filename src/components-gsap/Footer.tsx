@@ -277,7 +277,7 @@ const Footer: React.FC = () => {
             
             {/* Footer Bottom */}
             <div className="w-[80%] h-px bg-black dark:bg-white opacity-20 my-4" />
-            <div className="w-full px-4 flex flex-col lg:flex-row justify-between items-center gap-2 text-center md:max-w-[80%] lg:max-w-full">
+            <div className="w-full px-4 flex flex-col justify-between items-center gap-2 text-center md:max-w-[80%] lg:max-w-full">
               <span className="text-xs font-normal underline cursor-pointer hover:text-primary-800 text-black dark:text-white">For your knowledge</span>
               <span className="text-[10px] sm:text-xs text-black dark:text-white max-w-xl">
                 © 2026 The use of any information in this website is strictly for contact the developer or to visit his projects, it shouldn't be used for a different reason than that.  

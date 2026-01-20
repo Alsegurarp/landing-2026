@@ -416,8 +416,8 @@
   .panel {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    min-height: 100vh;
-    height: 100vh;
+    min-height: 100dvh;
+    height: 100dvh;
   }
 
     .embla {
